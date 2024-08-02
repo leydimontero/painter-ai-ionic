@@ -4,7 +4,7 @@ export const Posts = [
     name: 'YorchDev',
     prompt: 'Felinos grandes de la selva',
     images: [
-      'https://source.unsplash.com/featured/500x500/?jaguar',
+      'https://www.naturalpress.ca/wp-content/uploads/2023/08/Portada-Jaguar.png',
       'https://source.unsplash.com/featured/500x500/?lion',
       'https://source.unsplash.com/featured/500x500/?cougar',
       'https://source.unsplash.com/featured/500x500/?panther',

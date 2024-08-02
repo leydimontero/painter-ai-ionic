@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post.model';
+import { UtilsService } from 'src/app/services/utils.service';
+import { PostDetailComponent } from 'src/app/shared/post-detail/post-detail.component';
 import { Posts } from 'src/assets/data/images';
 
 @Component({
@@ -12,7 +14,9 @@ export class HomePage implements OnInit {
   posts: Post[] = [];
   loading: boolean = false;
 
-  constructor() { }
+  constructor(
+    private utilsSvc: UtilsService
+  ) { }
 
   ngOnInit() {
   }
@@ -31,5 +35,13 @@ export class HomePage implements OnInit {
   getPosts(){
     this.posts = Posts;
     console.log(this.posts);
+  }
+
+  async showPostDetail(post: Post){
+    await this.utilsSvc.presentModal({
+      component: PostDetailComponent,
+      componentProps: { post },
+      cssClass: 'modal-full-size'
+    })
   }
 }

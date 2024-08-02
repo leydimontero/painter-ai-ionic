@@ -14,7 +14,7 @@
   <!---- ============== POSTS ============== -->
   <ion-grid *ngIf="posts.length">
     <ion-row>
-      <ion-col [ngClass]="{'col-down': i % 2 !== 0}" size-lg="3" size-md="3" size-sm="6" size="6" *ngFor="let p of posts; index as i">
+      <ion-col class="click" (click)="showPostDetail(p)" [ngClass]="{'col-down': i % 2 !== 0}" size-lg="3" size-md="3" size-sm="6" size="6" *ngFor="let p of posts; index as i">
         <ion-avatar>
           <img [src]="p.images[0]" />
         </ion-avatar>
